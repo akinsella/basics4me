@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://maven.apache.org/POM/4.0.0">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.helyx</groupId>
+	<artifactId>basics4me</artifactId>
+	<version>1.0.0</version>
+
+	<name>Basic4ME</name>
+
+	<packaging>jar</packaging>
+
+	<description>Basics4ME is an utility project to package oss helper classes for J2ME from apache project harmony and other.</description>
+	<url>http://basics4me.helyx.org</url>
+
+	<licenses>
+		<license>
+			<name>Apache 2</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+
+	<organization>
+		<name>Helyx.org</name>
+		<url>http://www.helyx.org</url>
+	</organization>
+
+	<inceptionYear>2008</inceptionYear>
+
+	<scm>
+		<connection>scm:svn:https://r13491.ovh.net/svn/Basics4ME/trunk</connection>
+		<developerConnection>scm:svn:https://r13491.ovh.net/svn/Basics4ME/trunk</developerConnection>
+		<tag>HEAD</tag>
+		<url>http://r13491.ovh.net/websvn/helyx.org/listing.php?repname=Basics4ME&amp;path=%2Ftrunk%2F#_trunk_</url>
+	</scm>
+
+	<distributionManagement>
+		<repository>
+			<id>Basics4ME</id>
+			<url>file:///var/maven/repository-install</url>
+		</repository>
+	</distributionManagement>
+
+	<issueManagement>
+		<system>jtrac</system>
+		<url>http://r13491.ovh.net/jtrac/app/</url>
+	</issueManagement>
+
+	<developers>
+		<developer>
+			<id>akinsella</id>
+			<name>Alexis Kinsella</name>
+			<email>alexis.kinsell@gmail.com</email>
+			<url>http://www.helyx.org</url>
+			<organization>Helyx.org</organization>
+			<organizationUrl>http://www.helyx.org</organizationUrl>
+			<roles>
+				<role>admin</role>
+				<role>packager</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+
+	<repositories>
+		<repository>
+			<id>helyx.org</id>
+			<url>http://r13491.ovh.net/archiva/repository/internal/</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<debug>false</debug>
+						<encoding>ISO8859-15</encoding>
+						<fork>true</fork>
+						<source>1.3</source>
+						<target>1.1</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<configuration>
+						<encoding>ISO8859-15</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<configuration>
+						<forkMode>once</forkMode>
+					</configuration>
+				</plugin>
+
+				<!-- Configure Eclipse-Me -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<configuration>
+						<buildcommands>
+							<buildcommand>org.eclipse.jdt.core.javabuilder</buildcommand>
+							<buildcommand>eclipseme.core.preverifier</buildcommand>
+						</buildcommands>
+						<projectnatures>
+							<projectnature>org.eclipse.jdt.core.javanature</projectnature>
+							<projectnature>eclipseme.core.nature</projectnature>
+						</projectnatures>
+						<classpathContainers>
+							<classpathContainer>J2MELIB</classpathContainer>
+							<classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
+						</classpathContainers>
+					</configuration>
+				</plugin>
+
+
+				<!-- this is not part of the example, remove it when project used as template -->
+				<plugin>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<configuration>
+						<descriptorRefs>
+							<descriptorRef>src</descriptorRef>
+						</descriptorRefs>
+					</configuration>
+					<executions>
+						<execution>
+							<id>make-assembly</id>
+							<phase>package</phase>
+							<goals>
+								<goal>attached</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+
+				<plugin>
+					<groupId>com.pyx4me</groupId>
+					<artifactId>j2me-maven-plugin</artifactId>
+					<executions>
+						<execution>
+							<goals>
+								<goal>package</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<wtkHome>${env.WTK_HOME}</wtkHome>
+						<proguardInclude>${basedir}/proguard.conf</proguardInclude>
+						<proguard>true</proguard>
+						<obfuscate>true</obfuscate>
+						<!-- Optional, populated by default
+							<jadAttributes>
+								<MIDlet-Icon>/pyx.png</MIDlet-Icon>
+								<MicroEdition-Profile>${j2me.midlet.profile}</MicroEdition-Profile>
+								<MicroEdition-Configuration>${j2me.midlet.configuration}</MicroEdition-Configuration>
+								<MIDlet-Vendor>${project.organization.name}</MIDlet-Vendor>
+								<Created-By>Vlad Skarzhevskyy</Created-By>
+								<MIDlet-Permissions>javax.microedition.io.Connector.http</MIDlet-Permissions>
+							</jadAttributes>
+						-->
+						<midlets>
+							<MIDlet>
+								<name>VeloCite</name>
+								<icon>/vcIcon.png</icon>
+								<class>org.helyx.app.j2me.velocite.midlet.VelociteMIDlet</class>
+							</MIDlet>
+						</midlets>
+
+						<!-- Optional, populated by default
+							<archive>
+								<manifestEntries>
+									<MIDlet-1>Example,/pyx.png,com.pyx4me.examples.ExampleMIDlet</MIDlet-1>
+									<MIDlet-Name>${j2me.midlet.name}</MIDlet-Name>
+									<MIDlet-Icon>/pyx.png</MIDlet-Icon>
+									<MIDlet-Vendor>${j2me.midlet.vendor}</MIDlet-Vendor>
+									<MIDlet-Version>${j2me.midlet.version}</MIDlet-Version>
+									<MicroEdition-Configuration>${j2me.midlet.configuration}</MicroEdition-Configuration>
+									<MicroEdition-Profile>${j2me.midlet.profile}</MicroEdition-Profile>
+								</manifestEntries>
+							</archive>
+						-->
+					</configuration>
+					<!-- Use different version of proguard
+						<dependencies>
+							<dependency>
+								<groupId>net.sf.proguard</groupId>
+								<artifactId>proguard</artifactId>
+								<version>3.6</version>
+								<scope>runtime</scope>
+							</dependency>
+						</dependencies>
+					-->
+				</plugin>
+
+	            <plugin>
+	                <groupId>net.sf.jour</groupId>
+	                <artifactId>jour-maven-plugin</artifactId>
+	                <version>2.0.2</version>
+	               <executions>
+	                    <execution>
+	                        <phase>test-compile</phase>
+	                        <goals>
+	                            <goal>instrument</goal>
+	                        </goals>
+	                        <configuration>
+	                            <jourConfig>${basedir}/process-test-classes.jour.xml</jourConfig>
+	                            <classesDirectory>${project.build.testOutputDirectory}</classesDirectory>
+	                            <output>test-classes</output>
+	                        </configuration>
+	                    </execution>
+	                </executions>
+	                <dependencies>
+	                    <dependency>
+	                        <groupId>com.pyx4me</groupId>
+	                        <artifactId>cldcunit-instrument</artifactId>
+	                        <version>2.0.2</version>
+	                    </dependency>
+	                </dependencies>
+	            </plugin>
+	            
+	        </plugins>
+
+		</pluginManagement>
+	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<configuration>
+					<aggregate>true</aggregate>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<aggregate>true</aggregate>
+					<encoding>ISO-8859-15</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>changelog-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>taglist-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</reporting>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		
+        <dependency>
+            <groupId>com.pyx4me</groupId>
+            <artifactId>cldcunit</artifactId>
+            <version>2.0.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.pyx4me</groupId>
+            <artifactId>cldcunit-se</artifactId>
+            <version>2.0.2</version>
+            <scope>provided</scope>
+        </dependency>
+	
+		<dependency>
+			<groupId>org.microemu</groupId>
+			<artifactId>microemulator</artifactId>
+			<version>2.0.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies></dependencies>
+	</dependencyManagement>
+
+</project>
