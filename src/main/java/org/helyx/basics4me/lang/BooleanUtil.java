@@ -1,11 +1,11 @@
 package org.helyx.basics4me.lang;
 
-public class Boolean {
+public class BooleanUtil {
 
 	public static final String TRUE = "true";
 	public static final String FALSE = "false";
 
-	private Boolean() {
+	private BooleanUtil() {
 		super();
 	}
 	

@@ -1,7 +1,7 @@
 package org.helyx.basics4me.lang;
 
 
-public class Char {
+public class CharUtil {
 	
    public static boolean isWhitespace(char c) {
         // Optimized case for ASCII

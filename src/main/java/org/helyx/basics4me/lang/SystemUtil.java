@@ -1,8 +1,8 @@
 package org.helyx.basics4me.lang;
 
-public class System {
+public class SystemUtil {
 
-	private System() {
+	private SystemUtil() {
 		super();
 	}
 	
