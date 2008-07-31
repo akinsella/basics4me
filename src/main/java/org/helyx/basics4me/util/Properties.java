@@ -27,7 +27,7 @@ import java.util.Date;
 import java.util.Enumeration;
 import java.util.Hashtable;
 
-import org.helyx.app.j2me.lib.text.AsciiUtil;
+import org.helyx.basics4me.lang.Char;
 
 /**
  * Properties is a Hashtable where the keys and values must be Strings. Each
@@ -350,7 +350,7 @@ public class Properties extends Hashtable {
                     }
                     break;
                 }
-                if (AsciiUtil.isWhitespace(nextChar)) {
+                if (Char.isWhitespace(nextChar)) {
                     if (mode == CONTINUE) {
                         mode = IGNORE;
                     }
