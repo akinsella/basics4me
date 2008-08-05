@@ -15,4 +15,8 @@ public class BooleanUtil {
 		return TRUE.equals(systemPropertyValue);
 	}
 	
+	public static boolean parseBoolean(String value) {
+		return TRUE.equals(value);
+	}
+	
 }
