@@ -251,6 +251,7 @@
 				<configuration>
 					<aggregate>true</aggregate>
 					<encoding>ISO-8859-15</encoding>
+					<maxmemory>32m</maxmemory>
 				</configuration>
 			</plugin>
 			<plugin>
