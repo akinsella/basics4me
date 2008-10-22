@@ -17,7 +17,6 @@
 
 package org.helyx.basics4me.io;
 
-import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
