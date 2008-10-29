@@ -17,7 +17,6 @@
 
 package org.helyx.basics4me.io;
 
-import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -28,7 +27,6 @@ import java.io.InputStream;
  * infrequently. The drawback is that extra space is required to hold the buffer
  * and that copying takes place when reading that buffer.
  * 
- * @see BufferedOutputStream
  */
 public class BufferedInputStream extends FilterInputStream {
     /**

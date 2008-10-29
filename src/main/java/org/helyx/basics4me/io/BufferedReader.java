@@ -17,7 +17,6 @@
 
 package org.helyx.basics4me.io;
 
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.Reader;
 
@@ -37,7 +36,6 @@ import java.io.Reader;
  * 
  * will buffer input for the file <code>file.java</code>.
  * 
- * @see BufferedWriter
  * @since 1.1
  */
 public class BufferedReader extends Reader {

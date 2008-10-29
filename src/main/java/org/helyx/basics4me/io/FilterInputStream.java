@@ -26,7 +26,6 @@ import java.io.InputStream;
  * view or one which uncompresses data before returning bytes read.
  * FilterInputStreams are meant for byte streams.
  * 
- * @see FilterOutputStream
  */
 public class FilterInputStream extends InputStream {
 
