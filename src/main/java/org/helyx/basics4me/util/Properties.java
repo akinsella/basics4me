@@ -22,7 +22,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintStream;
-import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.Hashtable;
@@ -188,8 +188,9 @@ public class Properties extends Hashtable {
      * 
      * @param writer
      *            the PrintWriter
+     * @throws IOException 
      */
-    public void list(PrintWriter writer) {
+    public void list(Writer writer) throws IOException {
         if (writer == null) {
             throw new NullPointerException();
         }
@@ -211,7 +212,7 @@ public class Properties extends Hashtable {
             } else {
                 buffer.append(property);
             }
-            writer.println(buffer.toString());
+            writer.write(buffer.toString() + "\n");
             buffer.setLength(0);
         }
     }
