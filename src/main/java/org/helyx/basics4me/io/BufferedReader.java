@@ -342,7 +342,7 @@ public class BufferedReader extends Reader {
             }
 
             char eol = '\0';
-            StringBuilder result = new StringBuilder(80);
+            StringBuffer result = new StringBuffer(80);
             /* Typical Line Length */
 
             result.append(buf, pos, count - pos);

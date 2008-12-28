@@ -67,7 +67,7 @@ public class Properties extends Hashtable {
         defaults = properties;
     }
 
-    private void dumpString(StringBuilder buffer, String string, boolean key) {
+    private void dumpString(StringBuffer buffer, String string, boolean key) {
         int i = 0;
         if (!key && i < string.length() && string.charAt(i) == ' ') {
             buffer.append("\\ "); //$NON-NLS-1$
@@ -475,7 +475,7 @@ public class Properties extends Hashtable {
 //                    .doPrivileged(new PriviAction<String>("line.separator")); //$NON-NLS-1$
         }
 
-        StringBuilder buffer = new StringBuilder(200);
+        StringBuffer buffer = new StringBuffer(200);
         OutputStreamWriter writer = new OutputStreamWriter(out, "ISO8859_1"); //$NON-NLS-1$
         if (comment != null) {
             writer.write("#"); //$NON-NLS-1$
