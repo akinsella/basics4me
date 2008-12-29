@@ -34,16 +34,16 @@
 	<inceptionYear>2008</inceptionYear>
 
 	<scm>
-		<connection>scm:svn:https://r13491.ovh.net/svn/Basics4ME/trunk</connection>
-		<developerConnection>scm:svn:https://r13491.ovh.net/svn/Basics4ME/trunk</developerConnection>
+		<connection>scm:svn:https://helyx.devguard.com/svn/basics4me/trunk</connection>
+		<developerConnection>scm:svn:https://helyx.devguard.com/svn/basics4me/trunk</developerConnection>
 		<tag>HEAD</tag>
-		<url>http://r13491.ovh.net/websvn/helyx.org/listing.php?repname=Basics4ME&amp;path=%2Ftrunk%2F#_trunk_</url>
+		<url>http://helyx.devguard.com/wsvn/helyx.org/listing.php?repname=basics4me&amp;path=%2Ftrunk%2F#_trunk_</url>
 	</scm>
 
 	<distributionManagement>
 		<repository>
-			<id>Basics4ME</id>
-			<url>file:///var/maven/repository-install</url>
+			<id>Helyx.org FTP Repository</id>
+			<url>ftp://ftp.helyx.org/www/maven/repository/install</url>
 		</repository>
 	</distributionManagement>
 
@@ -70,12 +70,21 @@
 
 	<repositories>
 		<repository>
-			<id>helyx.org</id>
-			<url>http://r13491.ovh.net/archiva/repository/internal/</url>
+			<id>Helyx.org Install</id>
+			<url>http://maven.helyx.org/repository/install</url>
 		</repository>
 	</repositories>
 
 	<build>
+	
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ftp</artifactId>
+				<version>1.0-alpha-6</version>
+			</extension>
+		</extensions>
+	
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -200,7 +209,7 @@
 						</dependencies>
 					-->
 				</plugin>
-
+<!-- 
 	            <plugin>
 	                <groupId>net.sf.jour</groupId>
 	                <artifactId>jour-maven-plugin</artifactId>
@@ -226,7 +235,7 @@
 	                    </dependency>
 	                </dependencies>
 	            </plugin>
-	            
+ -->	            
 	        </plugins>
 
 		</pluginManagement>
