@@ -70,8 +70,8 @@
 
 	<repositories>
 		<repository>
-			<id>Helyx.org Install</id>
-			<url>http://maven.helyx.org/repository/install</url>
+			<id>helyx.org-repo-release</id>
+			<url>http://maven.helyx.org/repository/release</url>
 		</repository>
 	</repositories>
 
