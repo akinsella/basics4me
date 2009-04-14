@@ -43,11 +43,11 @@
 	<distributionManagement>
 		<repository>
 			<id>helyx.org-repo-release</id>
-			<url>ftp://ftp.helyx.org/maven/repository/release</url>
+			<url>ftp://ftp.helyx.org/maven/public/repository/release</url>
 		</repository>
 		<snapshotRepository>
 			<id>helyx.org-repo-snapshot</id>
-			<url>ftp://ftp.helyx.org/maven/repository/snapshot</url>
+			<url>ftp://ftp.helyx.org/maven/public/repository/snapshot</url>
 		</snapshotRepository>
 		<site>
 			<id>helyx.org-site-basics4me</id>
