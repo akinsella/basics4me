@@ -64,7 +64,7 @@
 		<developer>
 			<id>akinsella</id>
 			<name>Alexis Kinsella</name>
-			<email>alexis.kinsell@gmail.com</email>
+			<email>alexis.kinsella@helyx.org</email>
 			<url>http://www.helyx.org</url>
 			<organization>Helyx.org</organization>
 			<organizationUrl>http://www.helyx.org</organizationUrl>
@@ -97,7 +97,6 @@
 			</extension>
 		</extensions>
 	
-		<pluginManagement>
 			<plugins>
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -163,94 +162,7 @@
 				</plugin>
 
 
-				<plugin>
-					<groupId>com.pyx4me</groupId>
-					<artifactId>j2me-maven-plugin</artifactId>
-					<executions>
-						<execution>
-							<goals>
-								<goal>package</goal>
-							</goals>
-						</execution>
-					</executions>
-					<configuration>
-						<wtkHome>${env.WTK_HOME}</wtkHome>
-						<proguardInclude>${basedir}/proguard.conf</proguardInclude>
-						<proguard>true</proguard>
-						<obfuscate>true</obfuscate>
-						<!-- Optional, populated by default
-							<jadAttributes>
-								<MIDlet-Icon>/pyx.png</MIDlet-Icon>
-								<MicroEdition-Profile>${j2me.midlet.profile}</MicroEdition-Profile>
-								<MicroEdition-Configuration>${j2me.midlet.configuration}</MicroEdition-Configuration>
-								<MIDlet-Vendor>${project.organization.name}</MIDlet-Vendor>
-								<Created-By>Vlad Skarzhevskyy</Created-By>
-								<MIDlet-Permissions>javax.microedition.io.Connector.http</MIDlet-Permissions>
-							</jadAttributes>
-						-->
-						<midlets>
-							<MIDlet>
-								<name>VeloCite</name>
-								<icon>/vcIcon.png</icon>
-								<class>org.helyx.app.j2me.velocite.midlet.VelociteMIDlet</class>
-							</MIDlet>
-						</midlets>
-
-						<!-- Optional, populated by default
-							<archive>
-								<manifestEntries>
-									<MIDlet-1>Example,/pyx.png,com.pyx4me.examples.ExampleMIDlet</MIDlet-1>
-									<MIDlet-Name>${j2me.midlet.name}</MIDlet-Name>
-									<MIDlet-Icon>/pyx.png</MIDlet-Icon>
-									<MIDlet-Vendor>${j2me.midlet.vendor}</MIDlet-Vendor>
-									<MIDlet-Version>${j2me.midlet.version}</MIDlet-Version>
-									<MicroEdition-Configuration>${j2me.midlet.configuration}</MicroEdition-Configuration>
-									<MicroEdition-Profile>${j2me.midlet.profile}</MicroEdition-Profile>
-								</manifestEntries>
-							</archive>
-						-->
-					</configuration>
-					<!-- Use different version of proguard
-						<dependencies>
-							<dependency>
-								<groupId>net.sf.proguard</groupId>
-								<artifactId>proguard</artifactId>
-								<version>3.6</version>
-								<scope>runtime</scope>
-							</dependency>
-						</dependencies>
-					-->
-				</plugin>
-<!-- 
-	            <plugin>
-	                <groupId>net.sf.jour</groupId>
-	                <artifactId>jour-maven-plugin</artifactId>
-	                <version>2.0.2</version>
-	               <executions>
-	                    <execution>
-	                        <phase>test-compile</phase>
-	                        <goals>
-	                            <goal>instrument</goal>
-	                        </goals>
-	                        <configuration>
-	                            <jourConfig>${basedir}/process-test-classes.jour.xml</jourConfig>
-	                            <classesDirectory>${project.build.testOutputDirectory}</classesDirectory>
-	                            <output>test-classes</output>
-	                        </configuration>
-	                    </execution>
-	                </executions>
-	                <dependencies>
-	                    <dependency>
-	                        <groupId>com.pyx4me</groupId>
-	                        <artifactId>cldcunit-instrument</artifactId>
-	                        <version>2.0.2</version>
-	                    </dependency>
-	                </dependencies>
-	            </plugin>
- -->	            
 	        </plugins>
-
-		</pluginManagement>
 	</build>
 
 	<reporting>
