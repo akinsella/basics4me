@@ -136,7 +136,7 @@
 							<projectnature>eclipseme.core.nature</projectnature>
 						</projectnatures>
 						<classpathContainers>
-							<classpathContainer>J2MELIB</classpathContainer>
+						<!--	<classpathContainer>J2MELIB</classpathContainer> -->
 							<classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
 						</classpathContainers>
 					</configuration>
