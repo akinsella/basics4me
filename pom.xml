@@ -131,41 +131,43 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-eclipse-plugin</artifactId>
 					<configuration>
+						<useProjectReferences>false</useProjectReferences>
 						<buildcommands>
 							<buildcommand>org.eclipse.jdt.core.javabuilder</buildcommand>
-							<buildcommand>eclipseme.core.preverifier</buildcommand>
+							<buildcommand>org.eclipse.mtj.core.preverifier</buildcommand>
+							<buildcommand>org.eclipse.mtj.core.packageBuilder</buildcommand>
 						</buildcommands>
 						<projectnatures>
 							<projectnature>org.eclipse.jdt.core.javanature</projectnature>
-							<projectnature>eclipseme.core.nature</projectnature>
+							<projectnature>org.eclipse.mtj.core.nature</projectnature>
 						</projectnatures>
 						<classpathContainers>
-						<!--	<classpathContainer>J2MELIB</classpathContainer> -->
-							<classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
+							<classpathContainer>org.elipse.mtj.JavaMEContainer/Sun Java(TM) Wireless Toolkit 2.5.2_01 for CLDC/DefaultColorPhone</classpathContainer>
 						</classpathContainers>
 					</configuration>
 				</plugin>
 
-
-				<!-- this is not part of the example, remove it when project used as template -->
 				<plugin>
-					<artifactId>maven-assembly-plugin</artifactId>
-					<configuration>
-						<descriptorRefs>
-							<descriptorRef>src</descriptorRef>
-						</descriptorRefs>
-					</configuration>
+					<artifactId>maven-javadoc-plugin</artifactId>
 					<executions>
 						<execution>
-							<id>make-assembly</id>
-							<phase>package</phase>
 							<goals>
-								<goal>attached</goal>
+								<goal>jar</goal>
+								<goal>javadoc</goal>
 							</goals>
 						</execution>
 					</executions>
 				</plugin>
-
+				<plugin>
+					<artifactId>maven-source-plugin</artifactId>
+					<executions>
+						<execution>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>     
 
 	        </plugins>
 	</build>
