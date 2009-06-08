@@ -1,0 +1,43 @@
+/**
+ * Copyright (C) 2007-2009 Alexis Kinsella - http://www.helyx.org - <Helyx.org>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ 
+ 
+===========
+Using Basics4ME
+===========
+ 
+Please, refer to following wiki related page: http://wiki.helyx.org/basics4me
+ 
+=========
+JAR files
+=========
+
+The basics4me distribution comes with one jar file: basics4me-VERSION.jar
+under the BASICS4ME_HOME directory.
+
+This jar file contains all the class files of the basics4me project,
+except test cases packages.
+
+==============
+Building basics4me
+==============
+
+basics4me is built with Maven 2.  To rebuild basics4me-VERSION.jar,
+place Maven 2 on the PATH and execute "mvn package".    
+
+
+In case of problems send an e-mail note to: dev@helyx.org.  
+
