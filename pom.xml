@@ -14,7 +14,7 @@
 
 	<packaging>jar</packaging>
 
-	<description>Basics4ME is an utility project to package oss helper classes for J2ME from apache project harmony and other.</description>
+	<description>Basics4ME is a library packaging oss helper classes for J2ME from Apache project Harmony and other.</description>
 	<url>http://basics4me.helyx.org</url>
 
 	<licenses>
@@ -126,7 +126,7 @@
 					</configuration>
 				</plugin>
 
-				<!-- Configure Eclipse-Me -->
+				<!-- Configure MTJ -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-eclipse-plugin</artifactId>
