@@ -1,0 +1,8 @@
+MIDlet-Version: 1.0
+MIDlet-Info-URL: http://basics4me.helyx.org
+MIDlet-Vendor: Helyx.org
+MIDlet-Jar-URL: basics4me.jar
+MicroEdition-Configuration: CLDC-1.1
+MIDlet-Description: Basics4ME
+MicroEdition-Profile: MIDP-2.0
+MIDlet-Name: Basics4ME
