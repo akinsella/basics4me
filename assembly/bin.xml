@@ -21,8 +21,8 @@
 		<format>zip</format>
 		<format>tar.gz</format>
 	</formats>
-	<baseDirectory>helyx-basics4me-${project.version}</baseDirectory>
-	<includeSiteDirectory>true</includeSiteDirectory>
+    <includeSiteDirectory>true</includeSiteDirectory>
+    <siteDirectory>doc</siteDirectory>
 	<fileSets>
 		<fileSet>
 			<includes>
@@ -41,12 +41,14 @@
 				<include>.mtj</include>
 				<include>build.properties</include>
 				<include>Application Descriptor</include>
+				<include>.project</include>
+				<include>.classpath</include>
 			</includes>
 		</fileSet>
 	</fileSets>
 	<files>
 		<file>
-			<source>target/logging4me-${project.version}.jar</source>
+			<source>target/basics4me-${project.version}.jar</source>
 		</file>
 	</files>
 </assembly>
