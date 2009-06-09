@@ -27,17 +27,20 @@
 		<fileSet>
 			<includes>
 				<include>pom.xml</include>
+				<include>src/**</include>
+				<include>res/**</include>
+				<include>test/**</include>
+				<include>site/**</include>
+				<include>assembly/**</include>
 				<include>CHANGELOG.txt</include>
 				<include>INSTALL.txt</include>
 				<include>LICENSE.txt</include>
 				<include>HARMONY-COPYRIGHT.txt</include>
 				<include>HARMONY-LICENSE.txt</include>
 				<include>README.txt</include>
-				<include>src/assembly/**</include>
-				<include>src/etc/**</include>
-				<include>src/main/**</include>
-				<include>src/site/**</include>
-				<include>src/test/**</include>
+				<include>.mtj</include>
+				<include>build.properties</include>
+				<include>Application Descriptor</include>
 			</includes>
 		</fileSet>
 	</fileSets>
