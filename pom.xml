@@ -88,7 +88,25 @@
 	</repositories>
 
 	<build>
-	
+
+		<finalName>${artifactId}-${version}</finalName>
+
+		<directory>target</directory>
+		<outputDirectory>target/classes</outputDirectory>
+		<testOutputDirectory>target/test-classes</testOutputDirectory>
+		<sourceDirectory>src</sourceDirectory>
+		<testSourceDirectory>test/java</testSourceDirectory>
+		<resources>
+			<resource>
+				<directory>res</directory>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>test/resources</directory>
+			</testResource>
+		</testResources>
+		
 		<extensions>
 			<extension>
 				<groupId>org.apache.maven.wagon</groupId>
