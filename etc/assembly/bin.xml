@@ -29,7 +29,7 @@
 				<include>src/**</include>
 				<include>res/**</include>
 				<include>test/**</include>
-				<include>site/**</include>
+				<include>etc/**</include>
 				<include>assembly/**</include>
 				<include>CHANGELOG.txt</include>
 				<include>INSTALL.txt</include>
