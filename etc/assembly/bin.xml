@@ -30,18 +30,31 @@
 				<include>res/**</include>
 				<include>test/**</include>
 				<include>etc/**</include>
-				<include>assembly/**</include>
+				<!-- 
 				<include>CHANGELOG.txt</include>
 				<include>INSTALL.txt</include>
 				<include>LICENSE.txt</include>
 				<include>HARMONY-COPYRIGHT.txt</include>
 				<include>HARMONY-LICENSE.txt</include>
 				<include>README.txt</include>
+				 -->
 				<include>.mtj</include>
 				<include>build.properties</include>
 				<include>Application Descriptor</include>
 				<include>.project</include>
 				<include>.classpath</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>/etc</directory>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>CHANGELOG.txt</include>
+				<include>INSTALL.txt</include>
+				<include>LICENSE.txt</include>
+				<include>HARMONY-COPYRIGHT.txt</include>
+				<include>HARMONY-LICENSE.txt</include>
+				<include>README.txt</include>
 			</includes>
 		</fileSet>
 	</fileSets>
