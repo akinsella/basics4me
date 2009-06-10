@@ -137,6 +137,14 @@
 						<encoding>ISO8859-15</encoding>
 					</configuration>
 				</plugin>
+			
+				<plugin>
+					<artifactId>maven-site-plugin</artifactId>
+					<configuration>
+						<siteDirectory>etc/site</siteDirectory>
+					</configuration>
+				</plugin>  
+				
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<configuration>
@@ -190,7 +198,7 @@
 					<artifactId>maven-assembly-plugin</artifactId>
 					<configuration>
 						<descriptors>
-							<descriptor>assembly/bin.xml</descriptor>
+							<descriptor>etc/assembly/bin.xml</descriptor>
 						</descriptors>
 					</configuration>
 					<executions>
