@@ -22,7 +22,6 @@
 		<format>tar.gz</format>
 	</formats>
     <includeSiteDirectory>true</includeSiteDirectory>
-    <siteDirectory>doc</siteDirectory>
 	<fileSets>
 		<fileSet>
 			<includes>
