@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<project name="Logging4ME">
+<project name="Basics4ME">
 
   <bannerLeft>
     <name>Basics4ME</name>
@@ -28,6 +28,7 @@
       <item name="Introduction" href="index.html"/>
       <item name="News" href="http://www.helyx.org/archives/category/basics4me"/>
       <item name="Features" href="http://wiki.helyx.org/doku.php?id=basics4me:features"/>
+      <item name="Downloads" href="http://wiki.helyx.org/doku.php?id=basics4me:downloads" />
       <item name="Getting started" href="http://wiki.helyx.org/doku.php?id=basics4me:start"/>
       <item name="Faq" href="http://wiki.helyx.org/doku.php?id=basics4me:faq"/>
       <item name="Wiki" href="http://wiki.helyx.org/doku.php?id=basics4me"/>
