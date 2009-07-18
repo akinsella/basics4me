@@ -35,7 +35,7 @@ except test cases packages.
 Building basics4me
 ==============
 
-basics4me is built with Maven 2.  To rebuild basics4me-VERSION.jar,
+basics4me is built with Maven 2. To rebuild basics4me-VERSION.jar,
 place Maven 2 on the PATH and execute "mvn package".    
 
 
