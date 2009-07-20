@@ -15,4 +15,14 @@ public class SystemUtil {
 		return systemPropertyValue;
 	}
 	
+	public static boolean getBooleanProperty(String systemProperty, boolean defaultValue) {
+		String systemPropertyValue = java.lang.System.getProperty(systemProperty);
+		if (systemPropertyValue == null) {
+			return defaultValue;
+		}
+		
+		return BooleanUtil.TRUE.equals(systemPropertyValue);
+	}
+
+	
 }

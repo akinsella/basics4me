@@ -9,14 +9,19 @@ public class BooleanUtil {
 		super();
 	}
 	
-	public static boolean getBoolean(String systemProperty) {
-		String systemPropertyValue = java.lang.System.getProperty(systemProperty);
-		
-		return TRUE.equals(systemPropertyValue);
-	}
-	
 	public static boolean parseBoolean(String value) {
 		return TRUE.equals(value);
 	}
 	
+	public static boolean parseBooleanIgnoreCase(String value) {
+		if (value == null) {
+			return false;
+		}
+		return TRUE.equals(value.toLowerCase());
+	}
+
+	public static String valueOf(boolean booleanValue) {
+		return booleanValue ? TRUE : FALSE;
+	}
+
 }

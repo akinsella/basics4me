@@ -15,10 +15,14 @@ public class UrlUtil {
 	}
 	
 	public static InputStream openStream(String url) throws IOException {
+		return openStream(url, "Profile/MIDP-2.0 Configuration/CLDC-1.1");
+	}
+	
+	public static InputStream openStream(String url, String userAgent) throws IOException {
 		if (url.startsWith(HTTP)) {
 			HttpConnection httpConnection = (HttpConnection)Connector.open(url);
 	        httpConnection.setRequestMethod(HttpConnection.GET);
-	        httpConnection.setRequestProperty("User-Agent", "Profile/MIDP-2.0 Configuration/CLDC-1.1");
+	        httpConnection.setRequestProperty("User-Agent", userAgent);
 	        
 			if (httpConnection.getResponseCode() != HttpConnection.HTTP_OK) {
 			    throw new IOException(httpConnection.getResponseMessage());		 
