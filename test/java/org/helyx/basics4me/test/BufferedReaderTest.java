@@ -2,31 +2,33 @@ package org.helyx.basics4me.test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import junit.framework.TestCase;
 
+import org.helyx.basics4me.io.BufferedReader;
 import org.helyx.basics4me.lang.UrlUtil;
 
-import com.sun.perseus.platform.BufferedInputStream;
-
-public class BufferedInputStreamTest extends TestCase {
+public class BufferedReaderTest extends TestCase {
 
 	public void testClassUrl() throws IOException {
 		try {
 			InputStream is = UrlUtil.openStream("/org/helyx/basics4me/test/test-content.properties");
 			assertNotNull(is);
-			BufferedInputStream bis = new BufferedInputStream(is);
+			InputStreamReader isr = new InputStreamReader(is);
+			BufferedReader br = new BufferedReader(isr);
 			try {
-				int intValue = 0;
+				String line = null;
 				
-				while((intValue = bis.read()) >= 0) {
-					System.out.println((char)intValue);
+				while((line = br.readLine()) != null) {
+					System.out.println(line);
 				}
 			}
 			finally {
-				bis.close();
+				br.close();
 				
-				bis = null;
+				br = null;
+				isr = null;
 				is = null;
 			}
 		}

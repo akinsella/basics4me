@@ -22,6 +22,7 @@ public class PropertiesTest extends TestCase {
 			}
 			finally {
 				is.close();
+				
 				is = null;
 			}
 		}
