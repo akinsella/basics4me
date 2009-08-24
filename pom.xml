@@ -16,7 +16,7 @@
 
 	<description>Basics4ME is a library packaging oss helper classes for J2ME from Apache project Harmony and other.</description>
 	<url>http://basics4me.helyx.org</url>
-
+ 
 	<licenses>
 		<license>
 			<name>Apache 2</name>
