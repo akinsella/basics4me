@@ -11,23 +11,18 @@ import org.helyx.basics4me.util.Properties;
 public class PropertiesTest extends TestCase {
 
 	public void testProperties() throws IOException {
+		InputStream is = UrlUtil.openStream("/org/helyx/basics4me/test/test-content.properties");
+		assertNotNull(is);
 		try {
-			InputStream is = UrlUtil.openStream("/org/helyx/basics4me/test/test-content.properties");
-			assertNotNull(is);
-			try {
-				Properties properties = new Properties();
-				properties.load(is);
-				assertEquals("test.value", properties.get("test.key"));
-				assertNull(properties.get("test.key.1"));
-			}
-			finally {
-				is.close();
-				
-				is = null;
-			}
+			Properties properties = new Properties();
+			properties.load(is);
+			assertEquals("test.value", properties.get("test.key"));
+			assertNotNull(properties.get("test.key.1"));
 		}
-		catch(Throwable t) {
-			t.printStackTrace();
+		finally {
+			is.close();
+			
+			is = null;
 		}
 	}
 	

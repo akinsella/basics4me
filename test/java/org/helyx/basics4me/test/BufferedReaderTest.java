@@ -12,28 +12,23 @@ import org.helyx.basics4me.lang.UrlUtil;
 public class BufferedReaderTest extends TestCase {
 
 	public void testClassUrl() throws IOException {
+		InputStream is = UrlUtil.openStream("/org/helyx/basics4me/test/test-content.properties");
+		assertNotNull(is);
+		InputStreamReader isr = new InputStreamReader(is);
+		BufferedReader br = new BufferedReader(isr);
 		try {
-			InputStream is = UrlUtil.openStream("/org/helyx/basics4me/test/test-content.properties");
-			assertNotNull(is);
-			InputStreamReader isr = new InputStreamReader(is);
-			BufferedReader br = new BufferedReader(isr);
-			try {
-				String line = null;
-				
-				while((line = br.readLine()) != null) {
-					System.out.println(line);
-				}
-			}
-			finally {
-				br.close();
-				
-				br = null;
-				isr = null;
-				is = null;
+			String line = null;
+			
+			while((line = br.readLine()) != null) {
+				System.out.print(line);
 			}
 		}
-		catch(Throwable t) {
-			t.printStackTrace();
+		finally {
+			br.close();
+			
+			br = null;
+			isr = null;
+			is = null;
 		}
 	}
 	
