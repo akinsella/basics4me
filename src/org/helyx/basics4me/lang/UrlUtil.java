@@ -13,10 +13,6 @@ public class UrlUtil {
 	
 	private static final String HTTP_HEADER_FIELD_USER_AGENT = "User-Agent";
 	private static final String HTTP_HEADER_FIELD_LOCATION = "Location";
-	
-	private static final int HTTP_RESPONSE_CODE_MOVED_PERMANENTLY = 301;
-	private static final int HTTP_HEADER_FIELD_FOUND = 302;
-	private static final int HTTP_HEADER_FIELD_SEE_OTHER = 303;
 
 	private static final String DEFAULT_USER_AGENT = "Profile/MIDP-2.0 Configuration/CLDC-1.1";
 
@@ -36,17 +32,21 @@ public class UrlUtil {
 	        httpConnection.setRequestProperty(HTTP_HEADER_FIELD_USER_AGENT, userAgent);
 	        
 	        int httpResponseCode = httpConnection.getResponseCode();
-			if ( httpResponseCode == HTTP_RESPONSE_CODE_MOVED_PERMANENTLY || 
-					httpResponseCode == HTTP_HEADER_FIELD_FOUND || 
-					httpResponseCode == HTTP_HEADER_FIELD_SEE_OTHER ) {
+			if ( httpResponseCode == HttpConnection.HTTP_MOVED_PERM ||
+					httpResponseCode == HttpConnection.HTTP_MOVED_TEMP ||
+					httpResponseCode == HttpConnection.HTTP_SEE_OTHER ) {
 				String urlRedirection = httpConnection.getHeaderField(HTTP_HEADER_FIELD_LOCATION);
 				httpConnection.close();
 				httpConnection = (HttpConnection)Connector.open(urlRedirection);
 		        httpConnection.setRequestMethod(HttpConnection.GET);
 		        httpConnection.setRequestProperty(HTTP_HEADER_FIELD_USER_AGENT, userAgent); 
-			}		
-			if (httpConnection.getResponseCode() != HttpConnection.HTTP_OK) {
-			    throw new IOException(httpConnection.getResponseMessage());		 
+			}	
+			
+			httpResponseCode = httpConnection.getResponseCode();
+			if (httpResponseCode != HttpConnection.HTTP_OK) {
+				String httpResponseMessage = httpConnection.getResponseMessage();
+				String errorMessage = httpResponseCode + " - "+ httpResponseMessage;
+			    throw new IOException(errorMessage);	 
 			}		
 
 			InputStream inputStream = httpConnection.openInputStream();
