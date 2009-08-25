@@ -9,6 +9,10 @@ public class BooleanUtil {
 		super();
 	}
 	
+	public static boolean getBoolean(String value) {
+		return parseBooleanIgnoreCase(value);
+	}
+	
 	public static boolean parseBoolean(String value) {
 		return TRUE.equals(value);
 	}
