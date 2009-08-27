@@ -86,7 +86,31 @@
 			<url>http://maven.helyx.org/repository/release</url>
 		</repository>
 	</repositories>
-	
+
+	<profiles>
+		<profile>
+			<id>Linux</id>
+			<properties>
+				<wtk.version>2.5.1</wtk.version>
+			</properties>
+			<activation>
+				<os>
+					<name>Linux</name>
+				</os>
+			</activation>
+		</profile>
+		<profile>
+			<id>Windows</id>
+			<properties>
+				<wtk.version>2.5.2_01</wtk.version>
+			</properties>
+			<activation>
+				<os>
+					<name>Linux</name>
+				</os>
+			</activation>
+		</profile>
+	</profiles>
 
 	<build>
 
@@ -173,7 +197,7 @@
 						<projectnature>org.eclipse.mtj.core.nature</projectnature>
 					</projectnatures>
 					<classpathContainers>
-						<classpathContainer>org.elipse.mtj.JavaMEContainer/Sun Java(TM) Wireless Toolkit 2.5.2_01 for CLDC/DefaultColorPhone</classpathContainer>
+						<classpathContainer>org.elipse.mtj.JavaMEContainer/Sun Java(TM) Wireless Toolkit ${wtk.version} for CLDC/DefaultColorPhone</classpathContainer>
 					</classpathContainers>
 				</configuration>
 			</plugin>
