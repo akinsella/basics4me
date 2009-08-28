@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mtjMetadata jad="basics4me.jad" version="1.0.0.v200906121354">
-   <device group="Sun Java(TM) Wireless Toolkit 2.5.2_01 for CLDC" name="DefaultColorPhone"/>
+   <device group="Sun Java(TM) Wireless Toolkit 2.5.1 for CLDC" name="DefaultColorPhone"/>
    <signing projectSpecific="false" signProject="false">
       <alias/>
    </signing>
