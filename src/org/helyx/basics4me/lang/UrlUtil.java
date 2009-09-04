@@ -32,14 +32,22 @@ public class UrlUtil {
 	        httpConnection.setRequestProperty(HTTP_HEADER_FIELD_USER_AGENT, userAgent);
 	        
 	        int httpResponseCode = httpConnection.getResponseCode();
+	        int redirectCount = 0;
 			if ( httpResponseCode == HttpConnection.HTTP_MOVED_PERM ||
 					httpResponseCode == HttpConnection.HTTP_MOVED_TEMP ||
 					httpResponseCode == HttpConnection.HTTP_SEE_OTHER ) {
+				redirectCount++;
+				if (redirectCount > 3) {
+					String urlRedirection = httpConnection.getHeaderField(HTTP_HEADER_FIELD_LOCATION);
+					httpConnection.close();
+					throw new IOException("3rd try - Http Response Code: '" + httpResponseCode + "', Actual URL redirection: '" + urlRedirection + "'");
+				}
 				String urlRedirection = httpConnection.getHeaderField(HTTP_HEADER_FIELD_LOCATION);
 				httpConnection.close();
 				httpConnection = (HttpConnection)Connector.open(urlRedirection);
 		        httpConnection.setRequestMethod(HttpConnection.GET);
 		        httpConnection.setRequestProperty(HTTP_HEADER_FIELD_USER_AGENT, userAgent); 
+		        httpResponseCode = httpConnection.getResponseCode();
 			}	
 			
 			httpResponseCode = httpConnection.getResponseCode();
