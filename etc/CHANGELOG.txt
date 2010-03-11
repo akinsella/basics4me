@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2007-2009 Alexis Kinsella - http://www.helyx.org - <Helyx.org>
+ * Copyright (C) 2007-2010 Alexis Kinsella - http://www.helyx.org - <Helyx.org>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,9 +14,27 @@
  * limitations under the License.
  */
  
--------
+
+-----------------------------------------------------------------------------
 ChangeLog:
--------
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+
+Version 1.0.6:
+
+Changes:
+- Project changes to reflect new home
+
+-----------------------------------------------------------------------------
+
+Version 1.0.5:
+
+Changes:
+- Bug fixing
+- Unit tests added
+
+-----------------------------------------------------------------------------
 
 Version 1.0.4 - Initiale release:
 
